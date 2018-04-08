@@ -1,0 +1,242 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+h2{
+	font-size: 30px;
+  padding: 15px;
+}
+
+h3{
+	font-size: 22px;
+  padding: 12px 15px;
+	color: #68686A;
+}
+
+h4{
+  font-size: 16px;
+  padding: 8px 15px;
+	color: #aaa;
+}
+
+p{
+	text-indent: 2em;  /* 首行缩进，em：字符 */
+  padding: 10px 15px;
+  text-align: justify;
+  /* 对齐方式：两端对齐 */
+}
+
+img{
+  padding: 10px 15px;
+}
+
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clearfix{
+  content:'';
+  display: block;
+  clear: both;
+}
+
+section{
+  margin: 18px;
+  background-color: #eee;
+  box-shadow: 9px 4px 9px rgba(0, 0, 0, 0.4);
+}
+
+/*             navbar             */
+nav{
+  background-color: #888;
+  /* border: 1px solid red; */
+  min-height: 60px;
+}
+
+.bd_logo1{
+  width: 120px;
+  height: 55px;
+}
+
+nav > ul{
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+
+nav > ul > li{
+  list-style: none;
+  margin: 0 8px;
+}
+
+/*            项目块         */
+section > .task{
+  padding: 20px;
+}
+
+section > .task > li{
+  list-style: none;
+}
+
+/*            缩略图          */
+.wrap{
+  padding-bottom: 50px;
+}
+
+h5{
+  font-size: 12px;
+  padding: 8px 30px;
+}
+
+.picture{
+  width: 120px;
+  height: 150px;
+  border: 1px solid #ddd;
+  padding: 0px 20px;
+  margin: 20px 80px;
+}
+
+/*             表格块        */
+.rank{
+  margin: 20px 50px;
+}
+
+.table{
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.table{
+  padding: 10px 15px;
+}
+
+.table_wrapper{
+  margin: 10px 15px;
+  padding-bottom: 30px;
+}
+
+.tb{
+	border-collapse: collapse;  /* 合并table边框 */
+	width: 1195px;
+	text-align: left;
+	text-indent: 5px;
+	font-size: 10px;
+  /* padding: 10px 15px; */
+  /* border: 1px solid red; */
+}
+
+thead{
+	background-color: #000000;
+	color: #FFFFFF;
+}
+
+tfoot{
+	background-color: #CCCCCC;
+	font-weight: bold;
+}
+
+.tb td,th{
+	height: 25px;
+}
+
+/*      侧栏form1     */
+.form1{
+  display: inline-block;
+  margin: 20px 200px;
+}
+
+.input-text{
+	width: 130px;
+	height: 18px;
+	float: left;
+	padding: 0;
+	font-size: 10px;
+}
+
+.span-text{
+	display: block;
+	width: 200px;
+	height: 20px;
+	line-height: 20px;
+	color: #AFB4B8;
+	float: left;
+	margin: 0px 7px;
+}
+
+.span-check {
+    float: left;
+    height: 15px;
+    margin: 7px 0 0 0;
+}
+
+.input-check{
+	  float: left;
+    height: 20px;
+    width: 15px;
+    margin: 7px 0 0 7px;
+}
+
+/*      侧栏form2    */
+.form2{
+  margin: 0px 200px;
+  border: 1px solid;
+
+}
+
+form > *{
+	margin: 5px 7px;
+	text-indent: 2px;
+}
+
+label{
+	width: 355px;
+	height: 20px;
+	line-height: 20px;
+	text-align: right;
+	padding: 0px;
+	display: block;  /* 将行内元素转换为块元素 */
+	float: left;
+}
+
+.discribe{
+  display: inline-block;
+  border: 1px solid;
+  float: left;
+
+}
+
+textarea{
+  border: 1px solid;
+	width: 400px;
+	height: 100px;
+	font-size: 15px;
+  /* margin-left: 380px; */
+  float: right;
+
+}
+
+.submit{
+	width: 1180px;
+	height: 40px;
+	background-color: #3355D0;
+	border-radius: 7px;   /* CSS3边框圆角，传入圆角的半径 */
+	border: 0px;
+	font-size: 16px;
+	color: #ffffff;
+	margin: 20px 20px;
+}
+
+.wrap-footer{
+	color: #FFFFFF;
+	background-color: #000000;
+  height: 72px;
+}
+
+.footer-list{
+	text-align: center;  /* 文本水平居中 */
+	padding: 22px 0;
+	font-size: 12px;
+}
