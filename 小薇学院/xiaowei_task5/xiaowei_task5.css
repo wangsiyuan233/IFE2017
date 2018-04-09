@@ -1,0 +1,281 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+h2{
+	font-size: 30px;
+  padding: 15px;
+}
+
+h3{
+	font-size: 22px;
+  padding: 12px 15px;
+	color: #68686A;
+}
+
+h4{
+  font-size: 16px;
+  padding: 8px 15px;
+	color: #aaa;
+}
+
+p{
+	text-indent: 2em;  /* 首行缩进，em：字符 */
+  padding: 10px 15px;
+  text-align: justify;
+  /* 对齐方式：两端对齐 */
+}
+
+img{
+  padding: 10px 15px;
+}
+
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clearfix{
+  content:'';
+  display: block;
+  clear: both;
+}
+
+main{
+  width: 100%;
+}
+
+section{
+  margin: 15px;
+  background-color: #eee;
+  box-shadow: 9px 4px 9px rgba(0, 0, 0, 0.4);
+}
+
+.big{
+  width: 65%;
+  float: left;
+}
+
+
+
+/*             navbar             */
+nav{
+  background-color: #888;
+  /* border: 1px solid red; */
+  min-height: 60px;
+}
+
+.bd_logo1{
+  width: 120px;
+  height: 55px;
+}
+
+nav > ul{
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+
+nav > ul > li{
+  list-style: none;
+  margin: 0 8px;
+}
+
+nav > ul > li > a{
+  text-decoration: none;
+  color: #eee;
+}
+
+/*            项目块         */
+section > .task{
+  padding: 20px;
+}
+
+section > .task > li{
+  list-style: none;
+}
+
+/*            缩略图          */
+.main-list{
+	background-color: #eee;
+	margin: 15px;
+	padding: 22px;
+}
+.ul-img{
+	overflow: hidden;
+}
+
+.ul-img img{
+	height: 80px;
+	width: 100px;
+	margin: 5px auto;
+}
+
+.ul-img li{
+	float: left;
+	width: 120px;
+	height: 126px;
+	margin: 9px;
+	border: 1px solid #CDCDCD;
+	text-align: center;
+	line-height: 30px;  /* 设置行高：文本垂直居中的方法之一 */
+}
+
+/*             表格块        */
+.rank{
+  margin: 20px 50px;
+}
+
+.table{
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.table_wrapper{
+  margin: 10px 15px;
+  padding-bottom: 30px;
+}
+
+.tb{
+	border-collapse: collapse;  /* 合并table边框 */
+	width: 100%;
+	text-align: left;
+	text-indent: 5px;
+}
+
+thead{
+	background-color: #000000;
+	color: #FFFFFF;
+}
+
+tfoot{
+	background-color: #CCCCCC;
+	font-weight: bold;
+}
+
+.tb td,th{
+	height: 25px;
+}
+
+tbody > tr > td > a{
+  text-decoration: none;
+}
+
+/*      侧栏aside     */
+.aside{
+	width: 412px;
+	position: absolute;
+	top: 60px;
+	right: 0;
+  background-color: #eee;
+  box-shadow: 9px 4px 9px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 95px;
+  right: 20px;
+}
+
+.aside-list{
+	width: 346px;
+	background-color: #eee
+	border: 1px solid #CDCDCD;
+	margin: 21px;
+	padding: 10px 0 10px 20px;
+}
+
+.aside-list h3{
+  font-size: 22px;
+  padding: 8px 0px;
+  margin-bottom: 15px;
+  color: #68686A;
+
+}
+
+.aside label{
+  font-weight: bold;
+	width: 100px;
+	height: 20px;
+	line-height: 20px;
+	text-align: right;
+	margin: 5px 0px;
+	padding: 0px;
+	display: block;
+	float: left;
+  font-size: 14px;
+}
+
+.input-text{
+	width: 130px;
+	height: 18px;
+	float: left;
+	padding: 0;
+  font-size: 14px;
+
+}
+
+.span-text{
+	display: block;
+	width: 150px;
+	height: 20px;
+	line-height: 20px;
+	color: #AFB4B8;
+	float: left;
+	margin: 0px 7px;
+  font-size: 12px;
+
+}
+
+.span-check {
+    float: left;
+    height: 15px;
+    margin: 7px 0 0 0;
+    font-size: 14px;
+
+}
+
+.input-check{
+  	float: left;
+    height: 20px;
+    width: 15px;
+    margin: 7px 0 0 7px;
+}
+
+/* 清除浮动 */
+.clear{
+	clear: both;
+}
+
+textarea{
+	padding: 0;
+	width: 210px;
+	height: 100px;
+}
+
+form > *{
+	margin: 5px 7px;
+	text-indent: 2px;
+}
+
+.submit{
+	width: 320px;
+	height: 40px;
+	background-color: #3355D0;
+	border-radius: 7px;
+	border: 0px;
+	font-size: 16px;
+	color: #ffffff;
+	margin: 0 auto;
+}
+
+.wrap-footer{
+	color: #FFFFFF;
+	background-color: #000000;
+  height: 72px;
+}
+
+.footer-list{
+	text-align: center;
+	padding: 22px 0;
+	font-size: 12px;
+}
