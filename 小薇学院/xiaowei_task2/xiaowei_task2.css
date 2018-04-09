@@ -202,7 +202,7 @@ label{
 }
 
 .discribe{
-  display: inline-block;
+  display: inline;
   border: 1px solid;
   float: left;
 
@@ -214,9 +214,30 @@ textarea{
 	height: 100px;
 	font-size: 15px;
   /* margin-left: 380px; */
-  float: right;
-
+  flex-direction: column;
+  resize: auto;
+  cursor: text;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-width: 1px;
+  border-style: solid;
+  border-color: initial;
+  border-image: initial;
+  padding: 2px;
+  display: inline;
 }
+
+/* input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+} */
 
 .submit{
 	width: 1180px;
