@@ -1,0 +1,192 @@
+*{
+  font-size: 16px;
+	font-family: "Microsoft YaHei"; /* 微软雅黑 */
+/* "SimHei" 黑体*/
+/*  "KaiTi" 楷体*/
+/* "SimSun" 宋体 */
+
+	color: black; /* BUG: #ffffff */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+}
+
+h2{
+	font-size: 30px;
+  padding: 15px;
+}
+
+h3{
+	font-size: 22px;
+  padding: 12px 15px;
+	color: #68686A;
+}
+
+h4{
+  font-size: 16px;
+  padding: 8px 15px;
+	color: #aaa;
+}
+
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.cf:after{
+  content:'';
+  display: block;
+  clear: both;
+}
+
+ul > li{
+  margin: 0;
+	padding: 0;
+  list-style: none;
+}
+
+/* section{
+  margin: 10px 0px;
+} */
+/* part3  part3  part3  part3  part3  part3  part3 */
+/* part4  part4  part4  part4  part4  part4  part4 */
+/* part5  part5  part5  part5  part5  part5  part5*/
+/* part6  part6  part6  part6  part6  part6  part6 */
+/* part7  part7  part7  part7  part7  part7  part7 */
+/* part8  part8  part8  part8  part8  part8  part8*/
+/* part9  part9  part9  part9  part9  part9  part9*/
+/* part10  part10  part10  part10  part10  part10 */
+/* footer  footer  footer  footer  footer  footer  */
+
+/* header  header  header  header  header  header */
+header{
+  border: 1px solid black;
+}
+
+.header_left{
+  border: 1px solid red;
+  margin: 25px 40px;
+}
+
+.header_left span{
+  color: #373938;
+  font-size: 35px;
+  font-family: "SimHei" ;
+}
+
+.header_right{
+  border: 1px solid green;
+  margin: 30px 20px;
+}
+
+.header_ul{
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.header_ul li{
+  color: #87888A;
+  margin: 0px 15px;
+  padding: 4px 0px;
+}
+
+.header_right_special1{
+  /* BUG: 为什么首页的字体不能变色！ */
+ border-bottom: 4px solid #E7504D;
+}
+
+.header_right_special2{
+  color: #E7504D;
+}
+
+/* part1  part1  part1  part1  part1  part1  part1 */
+.part1{
+  position: relative;
+}
+
+.part1_img1{
+
+}
+
+.part1_img2{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.part1_1{
+  color: #FEFEFF;
+  font-size: 60px;
+  font-family: "Microsoft YaHei";
+  position: absolute;
+  left: 130px;
+  top: 250px;
+}
+
+.part1_2{
+  color: #F7F2F6;
+  font-size: 20px;
+  position: absolute;
+  left: 136px;
+  top: 328px;
+
+}
+.part1_3{
+  color: #F7F2F6;
+  font-size: 20px;
+  position: absolute;
+  left: 136px;
+  top: 361px;
+}
+
+.part1 button{
+  font-size: 30px;
+  color: #F7F2F6;
+  background-color: #E7504D;
+  padding: 20px 100px;
+  position: absolute;
+  left: 136px;
+  top: 500px;
+  outline: none; /* 去掉蓝色边框 */
+  border: none; /* 去掉金属边框*/
+  box-shadow: 4px 4px 5px 0px rgba(136,136,136,0.7);
+}
+
+/* part2  part2  part2  part2  part2  part2  part2 */
+.part2{
+  border: 1px solid black;
+}
+.part2_1{
+  border: 1px solid red;
+  width: 25%;
+
+}
+
+.part2_1 img{
+
+}
+
+.part2_1 span{
+
+}
+
+.part2_2{
+  border: 1px solid red;
+  width: 25%;
+}
+
+.part2_3{
+  border: 1px solid red;
+  width: 25%;
+}
+
+.part2_4{
+  border: 1px solid red;
+  width: 25%;
+}

@@ -2,7 +2,7 @@
 【平均用时 2.1 天】
 [【百度地址】](http://ife.baidu.com/course/detail/id/99)
 [【我的代码】](https://github.com/wangsiyuan233/IFE2017/tree/master/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/xiaowei_task6)
-[【效果预览】](https://baoyuzhang.github.io/IFE2017/IFE_xiaowei/IFE_xiaowei_task6/IFE_xiaowei_task6.html)
+[【效果预览】](http://wangsiyuan233.cn/IFE2017/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/xiaowei_task6/xiaowei_task6.html)
 
 ### 任务目的
 1. 深入掌握CSS中的字体、背景、颜色等属性的设置
