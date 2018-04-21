@@ -1,7 +1,7 @@
 ## 任务七：实现常见的技术产品官网的页面架构及样式布局
-【平均用时 2.6 天】
+【平均用时 3.2 天】
 [【百度地址】](http://ife.baidu.com/course/detail/id/102)
-[【我的代码】](https://github.com/baoyuzhang/IFE2017/tree/master/IFE_xiaowei/IFE_xiaowei_task7)
+[【我的代码】](https://github.com/wangsiyuan233/IFE2017/tree/master/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/xiaowei_task7)
 [【效果预览】](https://baoyuzhang.github.io/IFE2017/IFE_xiaowei/IFE_xiaowei_task7/IFE_xiaowei_task7.html)
 
 ### 任务目的
@@ -28,4 +28,4 @@
 #### 解决方案：
 整个下拉菜单最外层父元素`position: relative;`
 
-![](2017-05-04_212139.png)
+![](2018-04-21.png)
