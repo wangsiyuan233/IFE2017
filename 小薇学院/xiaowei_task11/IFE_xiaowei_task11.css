@@ -1,0 +1,140 @@
+*{margin: 0;padding: 0;}
+.fl{float: left;}
+.fr{float: right;}
+.cf{content: '';display: block;clear: both;}
+ul > li{list-style: none;}
+
+.wrap{
+  width: 780px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #656565;
+  background-color: #F5F5F5;
+}
+
+section{
+  background-color: white;
+  margin: 20px 0px;
+}
+/* part1  part1  part1  part1  part1  part1  part1 */
+.part1{
+  background-color: #91D5D9;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  color: #FFFFFF;
+}
+
+.part1 p{
+  height: 50px;
+  line-height: 50px;
+}
+
+.part1 span{
+  border: 1px solid;
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  transform: translateX(-16%);
+}
+
+/* part2  part2  part2  part2  part2  part2  part2 */
+.part2{
+  border: 1px solid red;
+  width: 100%;
+  font-weight: bold;
+
+
+}
+.part2 ul{
+  display: flex;
+}
+
+.part2 ul > li{
+  font-size: 20px;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 58px;
+}
+
+.part2 ul > li:nth-child(2){
+  padding-bottom: 5px;
+  border-bottom: 4px solid #91D5D9;
+}
+
+/* part3  part3  part3  part3  part3  part3  part3 */
+.part3 img{
+  width: 100%;
+}
+
+/* part4  part4  part4  part4  part4  part4  part4 */
+.part4{
+  width: 100%;
+}
+
+.part4 ul{
+  display: flex;
+}
+
+.part4 ul > li{
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 14px 17px;
+}
+
+.part4 ul > li > span{
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 10px 37px;
+}
+
+.part4_line{
+  width: 90%;
+  margin: 10px auto;
+  border-bottom: 4px solid #E1E1E1;
+}
+
+
+.part4_col{
+border: 1px solid black;
+}
+
+.part4_col ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.part4_col ul > li{
+  /* border: 1px solid red; */
+
+  margin: 0px 0px;
+}
+
+.part4_col ul > li:nth-child(2),
+.part4_col ul > li:nth-child(1){
+  padding-right: 30px;
+  border-right: 4px solid #E1E1E1;
+
+}
+
+.part4_col ul > li:nth-child(3){
+}
+
+.part4_col ul > li > p{
+  font-size: 22px;
+  font-weight: bold;
+  margin: 5px 29px;
+}
+
+.part4_col ul > li > span{
+  margin: 5px 22px;
+}
+
+.part4_col ul > li:nth-child(3) > img{
+
+}
