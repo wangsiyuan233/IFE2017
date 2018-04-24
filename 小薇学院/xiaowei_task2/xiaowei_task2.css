@@ -182,7 +182,6 @@ tfoot{
 /*      侧栏form2    */
 .form2{
   margin: 0px 200px;
-  border: 1px solid;
 
 }
 
@@ -203,13 +202,11 @@ label{
 
 .discribe{
   display: inline;
-  border: 1px solid;
   float: left;
 
 }
 
 textarea{
-  border: 1px solid;
 	width: 400px;
 	height: 100px;
 	font-size: 15px;
