@@ -1,8 +1,8 @@
 ## 任务一：零基础HTML编码
 【平均用时 5.2 天】
 [【百度地址】](http://ife.baidu.com/course/detail/id/90)
-[【我的代码】](https://github.com/wangsiyuan233/IFE2017/tree/master/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/xiaowei_task1)
-[【效果预览】](http://wangsiyuan233.cn/IFE2017/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/xiaowei_task1/xiaowei_task1.html)
+[【我的代码】](https://github.com/wangsiyuan233/IFE2017/tree/master/%E5%BD%AC%E5%BD%AC%E5%AD%A6%E9%99%A2/binbin_task1)
+[【效果预览】](https://wangsiyuan233.github.io/IFE2017/%E5%BD%AC%E5%BD%AC%E5%AD%A6%E9%99%A2/binbin_task1/binbin_task1.html)
 
 
 ### 任务目的
