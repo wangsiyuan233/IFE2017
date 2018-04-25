@@ -5,18 +5,18 @@
 	<title>任务三：零基础JavaScript编码（三）</title>
 </head>
 <body>
-	<ul id="source">
+	<ul id="before">
 		<li>北京空气质量：<b>90</b></li>
 		<li>上海空气质量：<b>70</b></li>
 		<li>天津空气质量：<b>80</b></li>
 		<li>广州空气质量：<b>50</b></li>
 		<li>深圳空气质量：<b>40</b></li>
 		<li>福州空气质量：<b>32</b></li>
-		<li>成都空气质量：<b>90</b></li>
+		<li>武汉空气质量：<b>90</b></li>
 	  </ul>
 
-	  <ul id="resort">
-		<!-- 
+	  <ul id="after">
+		<!--
 		<li>第一名：北京空气质量：<b>90</b></li>
 		<li>第二名：北京空气质量：<b>90</b></li>
 		<li>第三名：北京空气质量：<b>90</b></li>
@@ -24,13 +24,13 @@
 
 	  </ul>
 
-	  <button id="sort-btn">排序</button>
+	  <button id="btn">排序</button>
 
 	<script type="text/javascript">
 
 	/**
 	 * getData方法
-	 * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+	 * 读取id为before的列表，获取其中城市名字及城市对应的空气质量
 	 * 返回一个数组，格式见函数中示例
 	 */
 	function getData() {
@@ -41,28 +41,28 @@
 		  ……
 		]
 		*/
-		var source = document.getElementById('source');
-		var source_li = source.childNodes;
+		var before = document.getElementById('before');
+		var before_li = before.childNodes;
 	// chrome浏览器会将空格视为text节点，所以处理子节点之前应删除空格文本节点
-		//如果是文本节点，并且值为空，则删除该节点  
-		for (var i = 0; i < source_li.length; i++) { 
-			if (source_li[i].nodeType == 3 && /\s/.test(source_li[i].nodeValue)) {
-				source_li[i].parentNode.removeChild(source_li[i]);
+		//如果是文本节点，并且值为空，则删除该节点
+		for (var i = 0; i < before_li.length; i++) {
+			if (before_li[i].nodeType == 3 && /\s/.test(before_li[i].nodeValue)) {
+				before_li[i].parentNode.removeChild(before_li[i]);
 			}
 		}
 
-		var data = new Array();
-		for (var i = 0; i < source_li.length; i++) {
-			var city_num = new Array();
+		var data = new Array();  /*第一组数组*/
+		for (var i = 0; i < before_li.length; i++) {
+			var city_num = new Array();  /*另一次数组*/
 			// 取出城市名city
-			var source_city = source_li[i].childNodes[0];
-			var city = source_city.nodeValue.slice(0, 2);
-			city_num.push(city);
+			var before_city = before_li[i].childNodes[0]; /*北京空气质量：*/
+			var city = before_city.nodeValue.slice(0, 2); /*北京*/
+			city_num.push(city);  /*此时数组里有 ：[北京]*/
 			// 取出污染指数num
-			var source_num = source_li[i].childNodes[1].childNodes[0];
-			var num = parseInt(source_num.nodeValue);
-			city_num.push(num);
-			data.push(city_num);
+			var before_num = before_li[i].childNodes[1].childNodes[0]; /*90*/  // REVIEW:
+			var num = parseInt(before_num.nodeValue); /*90*/  /*解析一个字符串返回整数*/
+			city_num.push(num); /*此时小数组里有 ：[北京,90]*/
+			data.push(city_num); /*此时大数组里有 ：[[北京,90],[武汉,90],[天津,80]]*/
 		}
 
 	  return data;
@@ -70,11 +70,11 @@
 	}
 
 	/**
-	 * sortAqiData
+	 * sortData
 	 * 按空气质量对data进行从小到大的排序
 	 * 返回一个排序后的数组
 	 */
-	function sortAqiData(data) {
+	function sortData(data) {
 		data.sort(function(x,y){
 			return x[1]-y[1];
 		});
@@ -83,44 +83,46 @@
 
 	/**
 	 * render
-	 * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+	 * 将排好序的城市及空气质量指数，输出显示到id位after的列表中
 	 * 格式见ul中的注释的部分
 	 */
 	function render(data) {
 		console.log(data);
-		var resort_ul = document.getElementById('resort');
+		var after_ul = document.getElementById('after');
 		data.forEach(function(item,index,array){
-			var order_city = item.slice(0,1);
-			var order_city_num = item.slice(1,2);
-			var resort_li = document.createElement("li");
-			var resort_li_text = document.createTextNode("第"+(index+1)+"名："+order_city+"空气质量：");
-			resort_li.appendChild(resort_li_text);
-			var resort_b = document.createElement("b");
-			resort_b.appendChild(document.createTextNode(order_city_num));
-			resort_li.appendChild(resort_b);
-			resort_ul.appendChild(resort_li);
+			var order_city = item.slice(0,1); /*北京空气质量：*/
+			var order_city_num = item.slice(1,2); /*90*/
+			var after_li = document.createElement("li");
+			var after_li_text = document.createTextNode("第"+(index+1)+"名："+order_city+"空气质量：");
+			after_li.appendChild(after_li_text);
+			var after_b = document.createElement("b");
+			after_b.appendChild(document.createTextNode(order_city_num));
+			after_li.appendChild(after_b);
+			after_ul.appendChild(after_li);
 		});
 	}
 
 	function btnHandle() {
-		var aqiData = getData();
-		console.log("aqiData:"+aqiData);
-		aqiData = sortAqiData(aqiData);
-		console.log(aqiData);
-		render(aqiData);
+		var Data = getData();
+		console.log("Data:"+Data);
+		/*Data:北京,90,上海,70,天津,80,广州,50,深圳,40,福州,32,武汉,90*/
+		Data = sortData(Data);
+		render(Data);
+
 	}
 
 	function init() {
-
-		// 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
-		var sort_btn = document.getElementById('sort-btn');
-		sort_btn.onclick = function(event){
+		// 在这下面给btn绑定一个点击事件，点击时触发btnHandle函数
+		var btn = document.getElementById('btn');
+		btn.onclick = function(event){
 			return btnHandle();
 		};
 
 	}
 
 	init();
+
+	/*A函数里面调用B，那么在A定义之前就要写好B*/
 
 	</script>
 </body>
