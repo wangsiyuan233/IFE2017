@@ -26,61 +26,65 @@
 	</style>
 </head>
 <body>
-		<input type="text" name="input" value="">
-		<button id="left-in">左侧入</button>
-		<button id="right-in">右侧入</button>
-		<button id="left-out">左侧出</button>
-		<button id="right-out">右侧出</button>
-	<ul id="queue">		
+	<input type="text" name="input" value="">
+
+	<button id="left-in">左侧入</button>
+	<button id="right-in">右侧入</button>
+	<button id="left-out">左侧出</button>
+	<button id="right-out">右侧出</button>
+
+	<ul id="list">
 	</ul>
+
 	<script type="text/javascript">
-		var queue = document.getElementById('queue');
+		var list = document.getElementById('list');
 		var left_in = document.getElementById('left-in');
 		var right_in = document.getElementById('right-in');
 		var left_out = document.getElementById('left-out');
 		var right_out = document.getElementById('right-out');
 
 		// 入队
-		function enqueue(side){
+		function enlist(side){  /*side*/
 			var input = document.getElementsByTagName('input')[0];
 			var input_value = input.value;
 			if (!input_value || isNaN(input_value)) {
 				alert('请输入一个数字');
-				input.value="";
-				input.focus();
+				input.value=""; /* 清除input里面的非数字*/
+				input.focus(); /* 光标跟在非数字里面 */
 			}else{
 				var li = document.createElement('li');
-				li.innerHTML = input_value;
+				li.innerHTML = input_value; /*innerHTML 属性返回表格行的开始和结束标签之间的 HTML*/
 				if(side==="left"){
-					queue.insertBefore(li,queue.firstChild);
+					list.insertBefore(li,list.firstChild);
 				}else if(side==="right"){
-					queue.appendChild(li);
+					list.appendChild(li);
 				}
-				input.value="";
+				input.value=""; 
 				input.focus();
 			}
 		}
 
 		// 出队
-		function dequeue(node,side){
+		function delist(node,side){  /* node side */
 			if(side=="left"){
-				alert("您将删除数字"+queue.firstChild.innerHTML+"!");
-				queue.removeChild(queue.firstChild);
+				alert("您将删除数字"+list.firstChild.innerHTML+"!");
+				list.removeChild(list.firstChild);
 			}else if(side=="right"){
-				alert("您将删除数字"+queue.lastChild.innerHTML+"!");
-				queue.removeChild(queue.lastChild);
+				alert("您将删除数字"+list.lastChild.innerHTML+"!");
+				list.removeChild(list.lastChild);
 			}else{
-				// queue.removeChild(node);				
+				// list.removeChild(node);
 				// alert("您将删除数字"+node.innerHTML+"!");
-                alert("您将删除数字" +queue.removeChild(node).innerHTML +"!"); // 更好的写法！
+				/*node是什么？？？？？？？？？？？*/
+        alert("您将删除数字" +list.removeChild(node).innerHTML +"!"); // 更好的写法！
 			}
 		}
 
-		left_in.onclick = function(event){enqueue("left");};
-		right_in.onclick = function(event){enqueue("right");};
-		left_out.onclick = function(event){dequeue(0,"left");};
-		right_out.onclick = function(event){dequeue(0,"right");};
-		queue.onclick = function(event){dequeue(event.target);};  // 事件冒泡，事件委托
+		left_in.onclick = function(event){enlist("left");};
+		right_in.onclick = function(event){enlist("right");};
+		left_out.onclick = function(event){delist(0,"left");};
+		right_out.onclick = function(event){delist(0,"right");}; // node 为 0 时，说明什么？
+		list.onclick = function(event){delist(event.target);};  // 事件冒泡，事件委托
 
 	</script>
 </body>

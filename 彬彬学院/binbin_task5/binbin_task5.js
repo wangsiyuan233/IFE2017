@@ -1,4 +1,4 @@
-var queue = document.getElementById('queue');
+var ul = document.getElementById('ul');
 var left_in = document.getElementById('left-in');
 var right_in = document.getElementById('right-in');
 var left_out = document.getElementById('left-out');
@@ -9,32 +9,32 @@ var bubble_sort = document.getElementById('bubble-sort');
 var modified_bubble_sort = document.getElementById('modified-bubble-sort');
 var insertion_sort = document.getElementById('insertion-sort');
 
-left_in.onclick = function(event){enqueue("left");};
-right_in.onclick = function(event){enqueue("right");};
-left_out.onclick = function(event){dequeue(0,"left");};
-right_out.onclick = function(event){dequeue(0,"right");};
-queue.onclick = function(event){dequeue(event.target);};  // 事件冒泡，事件委托
+left_in.onclick = function(event){enul("left");};
+right_in.onclick = function(event){enul("right");};
+left_out.onclick = function(event){deul(0,"left");};
+right_out.onclick = function(event){deul(0,"right");};
+ul.onclick = function(event){deul(event.target);};  // 事件冒泡，事件委托
 
 // 记录未排序数列
-var initState = rememberInitArray(queue);
+var initState = rememberInitArray(ul);
 var stateSort = new Array();  // 保留每一次的排序状态，用于可视化
 
 sort_init.onclick = function(event){
     console.log(initState);
-    queue.innerHTML = "";
+    ul.innerHTML = "";
     for (var i = 0; i < initState.length; i++) {
         var li = createVisualizationItem(initState[i]);
-        queue.appendChild(li);
+        ul.appendChild(li);
     }
 };
-bubble_sort.onclick = function(event){sortAndVisualization("冒泡排序",queue,stateSort);};
-modified_bubble_sort.onclick = function(event){sortAndVisualization("改进冒泡",queue,stateSort);};
-insertion_sort.onclick = function(event){sortAndVisualization("插入排序",queue,stateSort);};
+bubble_sort.onclick = function(event){sortAndVisualization("冒泡排序",ul,stateSort);};
+modified_bubble_sort.onclick = function(event){sortAndVisualization("改进冒泡",ul,stateSort);};
+insertion_sort.onclick = function(event){sortAndVisualization("插入排序",ul,stateSort);};
 
 // 记录未排序数列
 function rememberInitArray(ul){
-    var initQueuelist = queueDeleteTextNode(ul.childNodes);  // 初始ul>li的nodelist
-    var initArrayList = createNonSortedArray(initQueuelist);  // 初始nodelist转为ArrayList
+    var initUllist = ulDeleteTextNode(ul.childNodes);  // 初始ul>li的nodelist
+    var initArrayList = createNonSortedArray(initUllist);  // 初始nodelist转为ArrayList
     // var initState = JSON.parse(JSON.stringify(initArrayList.array()));  // 初始ArrayList转为Array
     var initState = initArrayList.array().concat();  // 初始ArrayList转为Array
     console.log(initState);
@@ -52,8 +52,8 @@ function createVisualizationItem(itemValue){
 // 排序及其可视化
 function sortAndVisualization(sortDescription,ul,stateSort){
     console.log(sortDescription);
-    var sortQueuelist = queueDeleteTextNode(ul.childNodes);  // 待排序ul>li的nodelist
-    var sortArrayList = createNonSortedArray(sortQueuelist);  // 待排序nodelist转为ArrayList
+    var sortUllist = ulDeleteTextNode(ul.childNodes);  // 待排序ul>li的nodelist
+    var sortArrayList = createNonSortedArray(sortUllist);  // 待排序nodelist转为ArrayList
     switch (sortDescription){
         case "冒泡排序":
             sortArrayList.bubbleSort(stateSort);
@@ -71,10 +71,10 @@ function sortAndVisualization(sortDescription,ul,stateSort){
 }
 
 // 删除nodelist空文本节点
-function queueDeleteTextNode(nodelist){
-    for (var i = 0; i < nodelist.length; i++) { 
+function ulDeleteTextNode(nodelist){
+    for (var i = 0; i < nodelist.length; i++) {
     // chrome浏览器会将空格视为text节点，所以处理子节点之前应删除空格文本节点
-        //如果是文本节点，并且值为空，则删除该节点  
+        //如果是文本节点，并且值为空，则删除该节点
         if (nodelist[i].nodeType == 3 && /\s/.test(nodelist[i].nodeValue)) {
             nodelist[i].parentNode.removeChild(nodelist[i]);
         }
@@ -85,7 +85,7 @@ function queueDeleteTextNode(nodelist){
 // 将nodelist转为ArrayList
 function createNonSortedArray(nodelist){
     var arraylist = new ArrayList();
-    for (var i = 0; i < nodelist.length; i++) { 
+    for (var i = 0; i < nodelist.length; i++) {
         arraylist.insert(nodelist[i].innerHTML);
     }
     return arraylist;
@@ -95,18 +95,18 @@ function createNonSortedArray(nodelist){
 function visualization(stateSort){
     var timer = setInterval(function(){//每500ms取一次stateSort中的第一个数组
         if(stateSort.length>0){
-            queue.innerHTML = "";
-            // console.log(queue);
+            ul.innerHTML = "";
+            // console.log(ul);
             var state = stateSort.shift();
             console.log(state);
             for (var i = 0; i < state.length-2; i++) {
                 var li = createVisualizationItem(state[i]);
                 // 若i是当前比较的数，且发生了交换，则改变颜色
                 if ( (i == state[state.length-2]) && state[state.length-1] ) {
-                    li.style.backgroundColor = "#3DA3EF";  
-                    // li.style.color = "red";  
+                    li.style.backgroundColor = "#3DA3EF";
+                    // li.style.color = "red";
                 }
-                queue.appendChild(li);
+                ul.appendChild(li);
             }
         }else{
             clearInterval(timer);
@@ -214,7 +214,7 @@ function ArrayList(){
 }
 
 // 入队
-function enqueue(side){
+function enul(side){
     var input = document.getElementsByTagName('input')[0];
     var input_value = input.value;
     if (!input_value) {
@@ -232,33 +232,32 @@ function enqueue(side){
     }else{
         var li = createVisualizationItem(input_value);
         if(side==="left"){
-            queue.insertBefore(li,queue.firstChild);
+            ul.insertBefore(li,ul.firstChild);
         }else if(side==="right"){
-            queue.appendChild(li);
+            ul.appendChild(li);
         }
         input.value="";
         input.focus();
 
         // 记录未排序数列
-        initState = rememberInitArray(queue);
+        initState = rememberInitArray(ul);
     }
 }
 
 // 出队
-function dequeue(node,side){
+function deul(node,side){
     if(side=="left"){
-        alert("您将删除数字"+queue.firstChild.innerHTML+"!");
-        queue.removeChild(queue.firstChild);
+        alert("您将删除数字"+ul.firstChild.innerHTML+"!");
+        ul.removeChild(ul.firstChild);
     }else if(side=="right"){
-        alert("您将删除数字"+queue.lastChild.innerHTML+"!");
-        queue.removeChild(queue.lastChild);
+        alert("您将删除数字"+ul.lastChild.innerHTML+"!");
+        ul.removeChild(ul.lastChild);
     }else{
-        // queue.removeChild(node);             
+        // ul.removeChild(node);
         // alert("您将删除数字"+node.innerHTML+"!");
-        alert("您将删除数字" +queue.removeChild(node).innerHTML +"!"); // 更好的写法！
+        alert("您将删除数字" +ul.removeChild(node).innerHTML +"!"); // 更好的写法！
     }
-        
-    // 记录未排序数列
-    initState = rememberInitArray(queue);
-}
 
+    // 记录未排序数列
+    initState = rememberInitArray(ul);
+}
